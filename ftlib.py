@@ -28,10 +28,10 @@ def morphology(img):
   kernel = cv2.getStructuringElement(cv2.MORPH_CROSS,(3,3)) 
   # iteration counter
   iteration = 0
-  print "Starting fast thin..."
+  print("Starting fast thin...")
   while 1:
     iteration += 1
-    print "Running iteration",iteration,"of morphology" # "Running iteration x"
+    print("Running iteration",iteration,"of morphology") # "Running iteration x"
     #erosion
     last_img = img.copy()
     ero = cv2.erode(img,kernel,iterations = 1)
@@ -52,8 +52,8 @@ def eraseTwoByTwos(img):
   largura = img.shape[1]
   obj = 0
   bg = 255
-  for y in xrange(1,altura-2):
-    for x in xrange(1,largura-2):
+  for y in range(1,altura-2):
+    for x in range(1,largura-2):
       #centrais
       c1 = img[y,x]
       c2 = img[y,x+1]
@@ -116,8 +116,8 @@ def eraseLadders(img):
         [7,  0,0  ],
         [7,  0,255]]
   mask = [m1,m2,m3,m4]
-  for y in xrange(1,altura-1):
-    for x in xrange(1,largura-1):
+  for y in range(1,altura-1):
+    for x in range(1,largura-1):
       p5 = img[y,x]
       if p5 == obj:
         p1 = img[y-1,x-1]
@@ -133,8 +133,8 @@ def eraseLadders(img):
              [p7,p8,p9]]
         for m in mask:
           pairing = 1
-          for i in xrange(0,3):
-            for j in xrange(0,3):
+          for i in range(0,3):
+            for j in range(0,3):
               if m[i][j] != 7:
                 if m[i][j] != p[i][j]:
                   pairing = 0
