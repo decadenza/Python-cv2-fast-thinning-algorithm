@@ -1,8 +1,11 @@
 # Python-cv2-fast-thinning-algorithm
 *Python 3 update of the original algorithm at https://github.com/Schukuratsu/Python-cv2-fast-thinning-algorithm*
 
+*Tested with:
+- Python 3.8.5
+- OpenCV 4.2.0*
 
-*Original readme follows:*
+*Original README follows:*
 
 Implementation of a fast thinning algorithm using morphology
 
